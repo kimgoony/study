@@ -7,16 +7,15 @@
     - vue cdn, vuex cdn, app.js를 불러오는 index.html생성
 
   2. app.js에 추가 state(todos)추가
-     - todos가 가질 변수 설정(id, task, complted)
+    - todos가 가질 변수 설정(id, task, complted)
   
   3. vuex의 getter로 리스트 목록 불러옴.
-     - vuex는 getter를 이용 todos의 목록을 array 시킬수 있음.
+    - vuex는 getter를 이용 todos의 목록을 array 시킬수 있음.
 
   4. vuex의 Mutations에 기능 추가
-     - ADD_TODO
-     - TOGGLE_TODO
-     - DELETE_TODO 
-  
+    - ADD_TODO
+    - TOGGLE_TODO
+    - DELETE_TODO 
   5. vuex의 store로 프로젝트에 연결
   6. todo list를 vue의 컴포넌트화 시킴.
   7. todo 생성을 컴포넌트화 시킴
