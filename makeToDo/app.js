@@ -1,5 +1,6 @@
 var state = {
     todos: [
+        /* data */
         /*{
             id: ,
             task: "Buy food at the supermarket.",
