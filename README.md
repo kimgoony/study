@@ -27,10 +27,3 @@
       2. Getters: State 안에 포함된 데이터를 모을수 있는 기능.
       3. Mutations: state 변할수 없는 오브젝트이지만 state를 직접적으로 변하게 하기 위한 기능을 만드는 곳.
       4. Actions: State를 변화시킬때 쓰는 함수. 다른 Action과 복합적으로 사용과 동시에 다양한 변화를 줄수 있고, 동시가 아닌 순차적 작업도 진행할 수 있다.
-  
-
-
-
-
-Functions that call mutations on the state.
-They can call multiple mutations, can call other actions, and support asynchronous operations.
