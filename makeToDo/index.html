@@ -10,6 +10,10 @@
         </div>
         <template id="todo-list">
             <ul class="tasks">
+                <!-- 
+                    click: completed, not completed toggle
+                    double Click : deleete item
+                -->
                 <li v-for="todo in todos"
                     :class="{completed: todo.completed}"
                     class="task"
@@ -20,6 +24,7 @@
         <template id="app-template">
             <div>
                 <form @submit.prevent="addTodo">
+                    <!-- text를 task로 하는 목록 생성 -->
                     <input class="todo-input" type="text" placeholder="Enter a new Task" v-model="task" />
                 </form>
                 <todo-list />

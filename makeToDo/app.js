@@ -19,6 +19,7 @@ var state = {
 };
 
 var getters = {
+    /* state의 todos 목록을 가져오라! */
     getTodos: state => state.todos
 };
 
@@ -66,11 +67,13 @@ var store = new Vuex.Store({
 
 
 Vue.component("todo-list", {
+    /* todos를 정렬시키기 */
     computed: {
         todos() {
             return this.$store.getters.getTodos;
         }
     },
+    /* 명령어 */
     methods: {
         toggleTodo: function(id) {
             this.$store.dispatch("toggleTodo", id);
@@ -89,6 +92,7 @@ var app = new Vue({
         newId: 3
     }),
     methods: {
+        /* 명령어 일 목록 추가 */
         addTodo: function() {
             this.$store.dispatch("addTodo", this);
             this.newId ++;
