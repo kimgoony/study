@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>make ToDo 만들어보기</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1>Todo List</h1>
+            <div id="todo-list-example">
+                <input class="todo-input" 
+                    v-model="newTodoText"
+                    @keyup.enter="addNewTodo"
+                    placeholder="Add a todo"
+                >
+                <ul class="tasks">
+                    <li
+                        is="todo-item"
+                        v-for="(todo, index) in todos"
+                        v-bind:key="todo.id"
+                        v-bind:task="todo.task"
+                        v-on:remove="todos.splice(index, 1)"
+                        v-on:click="alert('bbb')"
+                        v-on:dblclick="alert('aaa')"
+                    ></li>
+                </ul>
+            </div>
+        </div>
+    <script>
+        Vue.component('todo-item', {
+            template:
+                '<li>{{ task }}</li>',
+            props: ['task'],
+            methods:{
+                
+            }
+        })
+        
+        new Vue({
+            el: '#todo-list-example',
+            data: {
+                newTodoText: '',
+                todos: [
+                    { id: 0, task: 'Study Vue', completed: false,},
+                    { id: 1, task: 'Making Something by vue(todo)', completed: true, }
+                ],
+                nextTodoId: 2
+            },
+            methods: {
+                addNewTodo: function () {
+                    this.todos.push({
+                        id: this.nextTodoId++,
+                        task: this.newTodoText,
+                        completed:false
+                    })
+                    this.newTodoText = ''
+                }
+            }
+        })
+        
+    </script>
+    
+</body>
+</html>
