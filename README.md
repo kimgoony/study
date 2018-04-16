@@ -1,6 +1,6 @@
 # study
 1. vue.js 기본 공부 1(makeToDo)
-- 튜토리얼 따라하기(todo 만들기-vue.js를 하려 했지만 실제 소스는 vuex를 이용해 버림.....ㅠㅠ)
+- 튜토리얼 따라하기(todo 만들기-vue.js를 하려 했지만 실제 소스는 vuex를 이용해 버림.....ㅠㅠ)<br>
   (https://sabe.io/tutorials/getting-started-with-vuex)
   
   1. index.html 생성
