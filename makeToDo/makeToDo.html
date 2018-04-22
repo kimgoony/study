@@ -20,33 +20,48 @@
                     <li
                         is="todo-item"
                         v-for="(todo, index) in todos"
-                        v-bind:key="todo.id"
-                        v-bind:task="todo.task"
-                        v-on:remove="todos.splice(index, 1)"
-                        v-on:click="alert('bbb')"
-                        v-on:dblclick="alert('aaa')"
+                        :class="{completed: todo.completed}"
+                        :key="todo.id"
+                        :task="todo.task"
+                        @remove="todos.splice(index, 1)"
+                        @toggle='todo.completed = !todo.completed'
                     ></li>
                 </ul>
             </div>
         </div>
     <script>
         Vue.component('todo-item', {
+            computed: {
+                todos() {
+                    return doData;
+                }
+            },
             template:
-                '<li>{{ task }}</li>',
+                '<li @click="$emit(\'toggle\')" @dblclick="$emit(\'remove\')">{{ task }}</li>',
             props: ['task'],
-            methods:{
-                
-            }
+            /*methods:{
+                delTodo: function(id) {
+                    this.$store.dispatch("deleteTodo", id);
+                }
+            }*/
         })
-        
+        var doData=[
+                    {
+                        id: 0,
+                        task: 'Study Vue',
+                        completed: false,
+                    },
+                    {
+                        id: 1,
+                        task: 'Making Something by vue(todo)',
+                        completed: true,
+                    }
+                ];
         new Vue({
             el: '#todo-list-example',
             data: {
                 newTodoText: '',
-                todos: [
-                    { id: 0, task: 'Study Vue', completed: false,},
-                    { id: 1, task: 'Making Something by vue(todo)', completed: true, }
-                ],
+                todos: doData,
                 nextTodoId: 2
             },
             methods: {

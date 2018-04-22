@@ -34,13 +34,13 @@ h1 {
 .tasks {
     padding-left: 1.5rem;
 }
-.task {
+.tasks li {
     margin-bottom: 0.5rem;
 }
-.task:hover {
+.tasks li:hover {
     cursor: pointer;
 }
 .completed {
     text-decoration: line-through;
-    color: #555;
+    color: #999;
 }
